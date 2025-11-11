@@ -1,14 +1,16 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Menu, X } from "lucide-react"
-import { useLanguage } from "@/lib/i18n/language-context"
-import { LanguageSwitcher } from "@/components/language-switcher"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
+import { useLanguage } from "@/lib/i18n/language-context";
+import { LanguageSwitcher } from "@/components/language-switcher";
+import logo_flex from "@/public/logo-flex.svg";
+import Image from "next/image";
 
 export function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const { t } = useLanguage()
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
   const navigation = [
     { name: t("nav.home"), href: "#home" },
@@ -16,7 +18,7 @@ export function Header() {
     { name: t("nav.services"), href: "#services" },
     { name: t("nav.projects"), href: "#projects" },
     { name: t("nav.contact"), href: "#contact" },
-  ]
+  ];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
@@ -24,8 +26,7 @@ export function Header() {
         <div className="flex lg:flex-1">
           <a href="#home" className="-m-1.5 p-1.5">
             <span className="text-2xl font-bold">
-              <span className="text-primary">QR</span>
-              <span className="text-foreground"> Devs</span>
+              <Image src={logo_flex} alt="QR Devs" width={100} height={100} />
             </span>
           </a>
         </div>
@@ -60,7 +61,9 @@ export function Header() {
 
         <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-4 lg:items-center">
           <LanguageSwitcher />
-          <Button className="bg-accent text-accent-foreground hover:bg-accent/90">{t("nav.getStarted")}</Button>
+          <Button className="bg-accent text-accent-foreground hover:bg-accent/90">
+            {t("nav.getStarted")}
+          </Button>
         </div>
       </nav>
 
@@ -84,5 +87,5 @@ export function Header() {
         </div>
       )}
     </header>
-  )
+  );
 }
