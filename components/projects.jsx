@@ -1,11 +1,11 @@
-import { Card } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { ExternalLink, Github } from "lucide-react"
-import { useLanguage } from "@/lib/i18n/language-context"
-;("use client")
+"use client";
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { ExternalLink, Github } from "lucide-react";
+import { useLanguage } from "@/lib/i18n/language-context";
 
 export function Projects() {
-  const { t } = useLanguage()
+  const { t } = useLanguage();
 
   const projects = [
     {
@@ -29,7 +29,7 @@ export function Projects() {
       tech: ["Next.js", "NextAuth", "MongoDB", "Vercel"],
       color: "from-primary to-accent",
     },
-  ]
+  ];
 
   return (
     <section id="projects" className="py-24 px-6 lg:px-8 bg-muted/30">
@@ -53,7 +53,9 @@ export function Projects() {
               className="overflow-hidden bg-card border-border hover:border-primary transition-all group"
             >
               <div className="relative h-48 overflow-hidden">
-                <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-20`}></div>
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-20`}
+                ></div>
                 <img
                   src={project.image || "/placeholder.svg"}
                   alt={project.title}
@@ -61,11 +63,18 @@ export function Projects() {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold text-foreground mb-3">{project.title}</h3>
-                <p className="text-muted-foreground leading-relaxed mb-4">{project.description}</p>
+                <h3 className="text-xl font-bold text-foreground mb-3">
+                  {project.title}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  {project.description}
+                </p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tech.map((tech) => (
-                    <span key={tech} className="text-xs px-3 py-1 rounded-full bg-primary/10 text-primary font-medium">
+                    <span
+                      key={tech}
+                      className="text-xs px-3 py-1 rounded-full bg-primary/10 text-primary font-medium"
+                    >
                       {tech}
                     </span>
                   ))}
@@ -94,11 +103,14 @@ export function Projects() {
         </div>
 
         <div className="text-center mt-12">
-          <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
+          <Button
+            size="lg"
+            className="bg-accent text-accent-foreground hover:bg-accent/90"
+          >
             {t("projects.cta.viewAll")}
           </Button>
         </div>
       </div>
     </section>
-  )
+  );
 }

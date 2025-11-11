@@ -1,10 +1,10 @@
-import { Button } from "@/components/ui/button"
-import { ArrowRight, Code2, Sparkles } from "lucide-react"
-import { useLanguage } from "@/lib/i18n/language-context"
-;("use client")
+"use client";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Code2, Sparkles } from "lucide-react";
+import { useLanguage } from "@/lib/i18n/language-context";
 
 export function Hero() {
-  const { t } = useLanguage()
+  const { t } = useLanguage();
 
   return (
     <section
@@ -20,7 +20,9 @@ export function Hero() {
       <div className="relative mx-auto max-w-5xl text-center">
         <div className="flex items-center justify-center gap-2 mb-8">
           <Sparkles className="h-5 w-5 text-primary" />
-          <span className="text-primary text-sm font-mono uppercase tracking-wider">{t("hero.badge")}</span>
+          <span className="text-primary text-sm font-mono uppercase tracking-wider">
+            {t("hero.badge")}
+          </span>
         </div>
 
         <h1 className="text-5xl font-bold tracking-tight text-foreground sm:text-7xl lg:text-8xl mb-6 text-balance">
@@ -36,7 +38,10 @@ export function Hero() {
         </p>
 
         <div className="mt-10 flex items-center justify-center gap-4 flex-wrap">
-          <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 text-base px-8">
+          <Button
+            size="lg"
+            className="bg-accent text-accent-foreground hover:bg-accent/90 text-base px-8"
+          >
             {t("hero.cta.start")}
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
@@ -53,22 +58,30 @@ export function Hero() {
         <div className="mt-16 grid grid-cols-2 gap-8 md:grid-cols-4 max-w-3xl mx-auto">
           <div className="text-center">
             <div className="text-4xl font-bold text-primary">50+</div>
-            <div className="text-sm text-muted-foreground mt-2">{t("hero.stats.projects")}</div>
+            <div className="text-sm text-muted-foreground mt-2">
+              {t("hero.stats.projects")}
+            </div>
           </div>
           <div className="text-center">
             <div className="text-4xl font-bold text-primary">100%</div>
-            <div className="text-sm text-muted-foreground mt-2">{t("hero.stats.satisfaction")}</div>
+            <div className="text-sm text-muted-foreground mt-2">
+              {t("hero.stats.satisfaction")}
+            </div>
           </div>
           <div className="text-center">
             <div className="text-4xl font-bold text-primary">24/7</div>
-            <div className="text-sm text-muted-foreground mt-2">{t("hero.stats.support")}</div>
+            <div className="text-sm text-muted-foreground mt-2">
+              {t("hero.stats.support")}
+            </div>
           </div>
           <div className="text-center">
             <div className="text-4xl font-bold text-primary">5+</div>
-            <div className="text-sm text-muted-foreground mt-2">{t("hero.stats.experience")}</div>
+            <div className="text-sm text-muted-foreground mt-2">
+              {t("hero.stats.experience")}
+            </div>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

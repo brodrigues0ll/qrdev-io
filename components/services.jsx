@@ -1,10 +1,10 @@
-import { Card } from "@/components/ui/card"
-import { Code, Smartphone, Database, Cloud, Lock, Zap } from "lucide-react"
-import { useLanguage } from "@/lib/i18n/language-context"
-;("use client")
+"use client";
+import { Card } from "@/components/ui/card";
+import { Code, Smartphone, Database, Cloud, Lock, Zap } from "lucide-react";
+import { useLanguage } from "@/lib/i18n/language-context";
 
 export function Services() {
-  const { t } = useLanguage()
+  const { t } = useLanguage();
 
   const services = [
     {
@@ -43,7 +43,7 @@ export function Services() {
       description: t("services.list.performance.description"),
       features: t("services.list.performance.features"),
     },
-  ]
+  ];
 
   return (
     <section id="services" className="py-24 px-6 lg:px-8">
@@ -69,11 +69,18 @@ export function Services() {
               <div className="inline-flex items-center justify-center w-14 h-14 rounded-lg bg-primary/10 group-hover:bg-primary group-hover:text-primary-foreground text-primary transition-all mb-4">
                 <service.icon className="h-7 w-7" />
               </div>
-              <h3 className="text-xl font-bold text-foreground mb-3">{service.title}</h3>
-              <p className="text-muted-foreground leading-relaxed mb-4">{service.description}</p>
+              <h3 className="text-xl font-bold text-foreground mb-3">
+                {service.title}
+              </h3>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                {service.description}
+              </p>
               <ul className="space-y-2">
                 {service.features.map((feature) => (
-                  <li key={feature} className="flex items-center text-sm text-muted-foreground">
+                  <li
+                    key={feature}
+                    className="flex items-center text-sm text-muted-foreground"
+                  >
                     <div className="w-1.5 h-1.5 rounded-full bg-accent mr-2"></div>
                     {feature}
                   </li>
@@ -84,5 +91,5 @@ export function Services() {
         </div>
       </div>
     </section>
-  )
+  );
 }
