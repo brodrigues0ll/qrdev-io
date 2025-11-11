@@ -26,7 +26,7 @@ export function Header() {
         <div className="flex lg:flex-1">
           <a href="#home" className="-m-1.5 p-1.5">
             <span className="text-2xl font-bold">
-              <Image src={logo_flex} alt="QR Devs" width={100} height={100} />
+              <Image src={logo_flex} alt="QR Devs" width={150} height={150} />
             </span>
           </a>
         </div>
